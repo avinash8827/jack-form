@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+
+        <title>Document</title>
+        <style>
+            body{
+                background-color: #1D1D1D;
+                
+            }
+            .myspan{
+                font-size: 6em;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 900;
+                color:#fff;
+                padding-left: 200px;
+                display: block;
+                padding-top: 60px;
+                clear: both;
+            }
+            .myspan > span:first-child{
+                color:#FD2155;
+                /*
+                text-shadow: h-shadow v-shadow blur-radius color|none|initial|inherit;
+                */
+                text-shadow: -9px 0px 0px #05FDD8;
+            }
+            .myspan > span:not(.myspan > span:first-child):hover{
+                /* STATE 2 */
+                color:#05FDD8;
+                animation-play-state: running;
+                animation-iteration-count: 1;
+            }
+            .myspan span{
+                /* STATE 1*/
+                float: left;
+                transition: all 0.4s linear;
+            }
+            .myspan > span:not(.myspan > span:first-child){
+                animation-name: anim;
+                animation-timing-function: cubic-bezier(0,.86,1,-1.25);
+                animation-iteration-count: 1;
+                animation-play-state: paused;
+                animation-duration:1s;
+            }
+            .myimg{
+                position: fixed;
+                top: 50px;
+                right: 0px;
+                width: 30px;
+            }
+            form.myForm{
+                display: block;
+            }
+            @keyframes anim {
+                0%{
+                    transform: scale(1,1);
+                }
+                25%{
+                    transform: scale(1.5,0.5);
+                }
+                50%{
+                    transform: scale(0.5,1.5);
+                }
+                75%{
+                    transform: scale(1.75,0.25);
+                }   
+                100%{
+                    transform: scale(1,1);
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+            <img class="myimg" src="img/awwwards_honorable_white_right.png" >
+            <span class="myspan">
+                <span>J</span>
+                <span>a</span>
+                <span>c</span>
+                <span>k</span>
+            </span>
+    </body>
+</html>
